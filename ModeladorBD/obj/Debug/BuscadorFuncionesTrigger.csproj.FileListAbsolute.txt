@@ -1,0 +1,16 @@
+D:\Visual\buscador_de_funciones_old\ModeladorBD\bin\Debug\BuscadorFuncionesTrigger.exe.config
+D:\Visual\buscador_de_funciones_old\ModeladorBD\obj\Debug\BuscadorFuncionesTrigger.exe
+D:\Visual\buscador_de_funciones_old\ModeladorBD\obj\Debug\BuscadorFuncionesTrigger.pdb
+D:\Visual\buscador_de_funciones\ModeladorBD\bin\Debug\BuscadorFuncionesTrigger.exe.config
+D:\Visual\buscador_de_funciones\ModeladorBD\bin\Debug\BuscadorFuncionesTrigger.exe
+D:\Visual\buscador_de_funciones\ModeladorBD\bin\Debug\BuscadorFuncionesTrigger.pdb
+D:\Visual\buscador_de_funciones\ModeladorBD\bin\Debug\Npgsql.dll
+D:\Visual\buscador_de_funciones\ModeladorBD\bin\Debug\Npgsql.pdb
+D:\Visual\buscador_de_funciones\ModeladorBD\bin\Debug\Npgsql.xml
+D:\Visual\buscador_de_funciones\ModeladorBD\obj\Debug\ModeladorBD.frm_mensaje.resources
+D:\Visual\buscador_de_funciones\ModeladorBD\obj\Debug\ModeladorBD.frm_principal.resources
+D:\Visual\buscador_de_funciones\ModeladorBD\obj\Debug\BuscadorFuncionesTrigger.Properties.Resources.resources
+D:\Visual\buscador_de_funciones\ModeladorBD\obj\Debug\BuscadorFuncionesTrigger.csproj.GenerateResource.Cache
+D:\Visual\buscador_de_funciones\ModeladorBD\obj\Debug\BuscadorFuncionesTrigger.exe
+D:\Visual\buscador_de_funciones\ModeladorBD\obj\Debug\BuscadorFuncionesTrigger.pdb
+D:\Visual\buscador_de_funciones\ModeladorBD\obj\Debug\BuscadorFuncionesTrigger.csprojResolveAssemblyReference.cache
