@@ -1,40 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Npgsql;
-using System.Windows.Forms;
-using System.Data;
 using System.Collections;
-namespace ModeladorBD
+using System.Data;
+using System.Windows.Forms;
+using Npgsql;
+
+namespace BuscadorFuncionesTrigger.clases
 {
     class ClsDatos
     {
-        private static NpgsqlConnection conex = new NpgsqlConnection();
+        private static readonly NpgsqlConnection Conex = new NpgsqlConnection();
         //CONEXION
-        public static Boolean Conectar(String cuser, String cpass, String cHost, String cport, String cDataBase)
+        public static bool Conectar(string cuser, string cpass, string cHost, string cport, string cDataBase)
         {
-            Boolean bestado = true;
+            var bestado = true;
             //Armamos la Cadena de Conexion
-            conex.ConnectionString = "User ID=" + cuser + "; Password=" + cpass +
+            Conex.ConnectionString = "User ID=" + cuser + "; Password=" + cpass +
                                 ";  Host=" + cHost + "; Port=" + cport + ";  Database=" + cDataBase + "; commandtimeout=900";
             try
             {//Confirmacion
-                conex.Open();
+                Conex.Open();
             }catch (Exception e)
             {//Error 
                 MessageBox.Show(e.Message);
                 bestado = false;}
             return bestado;
-        }//DESCONECCIÓN
+        }
+        //DESCONECCIÓN
         public static void Desconectar()
         {
             try
             {//Estado
-                if (conex.State == System.Data.ConnectionState.Open)
+                if (Conex.State == ConnectionState.Open)
                 {
-                    conex.Close();
+                    Conex.Close();
                 }
             }catch (Exception e)
             {//Error 
@@ -42,67 +40,65 @@ namespace ModeladorBD
             }
         }
         //METODO REALIZARA LA CONSULTA TRALLENDO DATOS
-        public static ArrayList listaDatos(String cSql)
+        public static ArrayList ListaDatos(string cSql)
         {
-            DataSet dt = new DataSet();
-            ArrayList Lista = new ArrayList();
+            var lista = new ArrayList();
+            var coman = new NpgsqlCommand(cSql, Conex);
             try
-            {
-                //Consulta
-                NpgsqlCommand coman = new NpgsqlCommand(cSql, conex);
-                NpgsqlDataReader dr = coman.ExecuteReader();
+            {   //Consulta
+                var dr = coman.ExecuteReader();
                 while (dr.Read())
                 {
-                    Lista.Add(dr.GetString(0));
+                    lista.Add(dr.GetString(0));
                 }
             }
             catch (Exception e)
             {
-                atraparError(e, cSql);
+                AtraparError(e, cSql);
             }
             finally
             {
                 //desconeccion
                 Desconectar();
             }
-            return Lista;
+            return lista;
         }
         //RETORNAR CADENA DE DATOS 
-        public static String cadenaDatos(String cSql)
+        public static string CadenaDatos(string cSql)
         {
-            String Dato = "";
+            var dato = "";
+            var coman = new NpgsqlCommand(cSql, Conex);
             try
             {
                 //Consulta
-                NpgsqlCommand coman = new NpgsqlCommand(cSql, conex);
-                Dato = coman.ExecuteScalar().ToString();
+                dato = coman.ExecuteScalar().ToString();
             }
             catch (Exception e)
             {
                 //Error
-                atraparError(e, cSql);
+                AtraparError(e, cSql);
             }
             finally
             {
                 //desconeccion
                 Desconectar();
             }
-            return Dato;
+            return dato;
         }
         //EJECUTAR EL DATO
-        public static Boolean run_script(String cSql)
+        public static bool run_script(string cSql)
         {
-            Boolean bestado=true;
+            var bestado=true;
+            var coman = new NpgsqlCommand(cSql, Conex);
             try
             {
                 //Consulta
-                NpgsqlCommand coman = new NpgsqlCommand(cSql, conex);
                 coman.ExecuteScalar();
             }
             catch (Exception e)
             {
                 //Error
-                atraparError(e, cSql);
+                AtraparError(e, cSql);
                 bestado = false;
             }
             finally
@@ -113,7 +109,7 @@ namespace ModeladorBD
             return bestado;
         }
         //MOSTRAMOS EL ERROR Y ATRAPAMOS LA CONSULTA
-        private static void atraparError(Exception e, String cSql)
+        private static void AtraparError(Exception e, string cSql)
         {
             Clipboard.SetText(cSql);
             MessageBox.Show(e.Message);

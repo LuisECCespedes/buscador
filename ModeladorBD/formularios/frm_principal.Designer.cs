@@ -1,6 +1,6 @@
-﻿namespace ModeladorBD
+﻿namespace BuscadorFuncionesTrigger.formularios
 {
-    partial class frm_principal
+    partial class FrmPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_principal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.grbCadenaConec = new System.Windows.Forms.GroupBox();
             this.lbl_base_datos = new System.Windows.Forms.Label();
             this.btn_listar_esquemas = new System.Windows.Forms.Button();
@@ -530,7 +530,7 @@
             this.Controls.Add(this.grbCadenaConec);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frm_principal";
+            this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscador -- Panel Control";
             this.grbCadenaConec.ResumeLayout(false);

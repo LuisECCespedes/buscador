@@ -1,6 +1,6 @@
-﻿namespace ModeladorBD
+﻿namespace BuscadorFuncionesTrigger.formularios
 {
-    partial class frm_mensaje
+    partial class FrmMensaje
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(374, 22);
             this.ControlBox = false;
-            this.Name = "frm_mensaje";
+            this.Name = "FrmMensaje";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
